@@ -408,8 +408,9 @@ int main() {
                 tk::spline s;
                 s.set_points(ptsx, ptsy);
 
-                        vector<double> next_x_vals;
-                        vector<double> next_y_vals;
+                vector<double> next_x_vals;
+                vector<double> next_y_vals;
+
                 // Start with the points from the previous path
                 for (int i = 0; i < prev_path_size; i++) {
                    next_x_vals.push_back(previous_path_x[i]);
