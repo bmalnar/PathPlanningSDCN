@@ -11,7 +11,7 @@ The simulator sends telemetry information to the ego car, i.e. the position and 
 
 ## Code structure
 
-The project is based on the original project [repository]() from Udacity. The path planning algorithm is mostly placed in the file __main.cpp__ in the __src__directory, and the reason for that is that the algorithm is simple enough to reside in a single file, which somewhat simplifies the coding work. 
+The project is based on the original project [repository](https://github.com/udacity/CarND-Path-Planning-Project) from Udacity. The path planning algorithm is mostly placed in the file _main.cpp_ in the _src_ directory, and the reason for that is that the algorithm is simple enough to reside in a single file, which somewhat simplifies the coding work. 
 
 Functionality of the algorithm can basically be divided in three major parts, as described in the following text. 
 
@@ -27,7 +27,33 @@ This code decides whether to change lanes and change the velocity. For example, 
 
 This code calculates the trajectory points based on the actions derived in the behavior step, the car position and the points from the previous path step. The trajectory generated in this step always has 50 points, which is a combination of the current position of the ego car, the trajectory points from the previous step, and the interpolation based on the spline calculation given the already known points (ego car, previous step). The spline related code is not developed in this project, but it is provided as a third party code in the repository. 
 
-# Prerequisites
+### Setting up the environment 
+- The project is configured to compile with cmake and make. Please make sure that the following dependencies are met:
+   - cmake version 3.5
+   - make version 4.1 for Linux and Mac and 3.81 for Windows
+   - gcc/g++ version 5.4
+- Download the Udacity simulator from [here](https://github.com/udacity/self-driving-car-sim/releases/)
+- Additional libraries need to be installed by running:
+   - On Ubuntu, install-ubuntu.sh 
+   - On Mac, install-mac.sh
+   - On Windows, the recommended way is to run a virtual machine and use the install-ubuntu.sh script
+- The project also uses library Eigen 
+   - [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page). This is already part of the repo so you shouldn't have to worry about it.
+   
+### How to run the program
 
-# Compiling and executing the project
+After cloning this repository and setting up the environment (as described in the previous section), simply execute the following command to build and run the program:
+```
+source build.sh
+./path_planning
+```
+At the same time, the Udacity simulator needs to be running, so that the simulator and the main program exchange information. When the simulator starts and the graphics settings are chosen, the scenario "Project 5: MPC Controller" needs to be chosen, please see the picture below. 
 
+<img src="images/sim.png" width="700" alt="Simulator Screenshot" />
+
+If the program is running and the simulator is also running, the two establish communication and the vehicle in the simulator starts to move, as depicted below. The green and yellow lines are displayed to show the MPC trajectory and the polyfit trajectory, respectively, as described above in the code section. At every simulation step we can also see the values for the steering angle and the speed of the vehicle. 
+
+<img src="images/sim2.png" width="700" alt="Simulator Screenshot" />
+
+### More information
+For even more information on the project structure, dependencies etc. please check original Udacity project [repository](https://github.com/udacity/CarND-Path-Planning-Project)
