@@ -7,8 +7,6 @@ The goal of the path planning project is to implement a path planning algorithm 
 
 The simulator sends the telemetry information to the ego car, i.e. the position and the velocity of the car, as well as the sensor fusion information (e.g. the id of the car, position, velocity) about the other cars that are driving on the highway in the vicinity of the ego car. The path planning algorithm needs to generate a set of points representing the ego car's trajectory, where the points are spaced 0.02 ms in time between each other.
 
-![Snapshot](images/snapshot1.png)
-
 ### Code structure
 
 The project is based on the original project [repository](https://github.com/udacity/CarND-Path-Planning-Project) from Udacity. The path planning algorithm is mostly placed in the file _main.cpp_ in the _src_ directory, and the reason for that is that the algorithm is simple enough to reside in a single file, which somewhat simplifies the coding work. 
