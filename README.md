@@ -5,7 +5,7 @@ Path planning project for the Udacity Self-driving car nano-degree
 
 The goal of the path planning project is to implement a path planning algorithm in order to drive the car on the highway in the [simulator](https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2) provided by Udacity. The algorithm is written in C++, and communicates with the simulator using the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) library. 
 
-The simulator sends telemetry information to the ego car, i.e. the position and the velocity of the car, as well as the sensor fusion information (e.g. the id of the car, position, velocity) about the other cars that are driving on the highway in the vicinity of the ego car. The path planning algorithm needs to generate a set of points representing the ego car's trajectory, where the points are spaced 0.02 ms in time between each other.
+The simulator sends the telemetry information to the ego car, i.e. the position and the velocity of the car, as well as the sensor fusion information (e.g. the id of the car, position, velocity) about the other cars that are driving on the highway in the vicinity of the ego car. The path planning algorithm needs to generate a set of points representing the ego car's trajectory, where the points are spaced 0.02 ms in time between each other.
 
 ![Snapshot](images/snapshot1.png)
 
@@ -47,13 +47,13 @@ After cloning this repository and setting up the environment (as described in th
 source build.sh
 ./path_planning
 ```
-At the same time, the Udacity simulator needs to be running, so that the simulator and the main program exchange information. When the simulator starts and the graphics settings are chosen, the scenario "Project 5: MPC Controller" needs to be chosen, please see the picture below. 
+At the same time, the Udacity simulator needs to be running, so that the simulator and the main program exchange information. When the simulator starts and the graphics settings are chosen, the scenario "Project 1: Path planning" needs to be chosen, please see the picture below. 
 
-<img src="images/sim.png" width="700" alt="Simulator Screenshot" />
+<img src="images/scr1.png" width="700" alt="Simulator Screenshot" />
 
-If the program is running and the simulator is also running, the two establish communication and the vehicle in the simulator starts to move, as depicted below. The green and yellow lines are displayed to show the MPC trajectory and the polyfit trajectory, respectively, as described above in the code section. At every simulation step we can also see the values for the steering angle and the speed of the vehicle. 
+If the program is running and the simulator is also running, the two establish communication and the vehicle in the simulator starts to move, as depicted below. The green line shows the trajectory planned, as shown on the picture below. 
 
-<img src="images/sim2.png" width="700" alt="Simulator Screenshot" />
+<img src="images/scr2.png" width="700" alt="Simulator Screenshot" />
 
 ### More information
 For even more information on the project structure, dependencies etc. please check original Udacity project [repository](https://github.com/udacity/CarND-Path-Planning-Project)
